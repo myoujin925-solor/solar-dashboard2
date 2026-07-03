@@ -9,13 +9,14 @@
 <title>SolarManager - 太陽光・蓄電池 投資回収管理</title>
 
 <!-- React 18（バージョン固定） -->
-<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<!-- CDNをunpkgからjsDelivrに変更（unpkgは読み込み失敗が起きやすいため） -->
+<script crossorigin src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 <!-- Recharts（グラフ描画）は react-is に依存するため先に読み込む -->
-<script crossorigin src="https://unpkg.com/react-is@18.3.1/umd/react-is.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/recharts@2.15.0/umd/Recharts.min.js"></script>
+<script crossorigin src="https://cdn.jsdelivr.net/npm/react-is@18.3.1/umd/react-is.production.min.js"></script>
+<script crossorigin src="https://cdn.jsdelivr.net/npm/recharts@2.15.0/umd/Recharts.min.js"></script>
 <!-- PapaParse（CSV解析） -->
-<script crossorigin src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+<script crossorigin src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
 <style>
   html, body { margin: 0; padding: 0; height: 100%; background: #f2f2f7; }
@@ -1006,7 +1007,7 @@ window.__solarDashboardLoaded = true;
   setTimeout(function () {
     if (!window.__solarDashboardLoaded && !document.getElementById("root").querySelector("h1, h2, .app-shell")) {
       showLoadError("読み込みがタイムアウトしました",
-        "15秒経っても表示が完了しませんでした。CDN（unpkg.com）への接続がブロックされているか、" +
+        "15秒経っても表示が完了しませんでした。CDN（jsdelivr.net）への接続がブロックされているか、" +
         "スクリプトの実行が途中で止まっている可能性があります。");
     }
   }, 15000);
